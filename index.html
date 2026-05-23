@@ -1,0 +1,1179 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8"/>
+<meta name="viewport" content="width=device-width, initial-scale=1.0"/>
+<title>Prasanna — Career Branding & Resume Expert | HRA Solutions</title>
+<link rel="preconnect" href="https://fonts.googleapis.com"/>
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+<link href="https://fonts.googleapis.com/css2?family=Playfair+Display:ital,wght@0,400;0,700;0,900;1,400;1,700&family=Outfit:wght@300;400;500;600&family=DM+Serif+Display:ital@0;1&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet"/>
+<style>
+*,*::before,*::after{box-sizing:border-box;margin:0;padding:0}
+:root{
+  --navy:#0b1c35;
+  --navy-mid:#122444;
+  --navy-light:#1a3057;
+  --sky:#2d6be4;
+  --sky-light:#4d87f6;
+  --teal:#00c2a8;
+  --white:#ffffff;
+  --off:#f5f7fb;
+  --grey:#e8edf5;
+  --text:#1e2d42;
+  --muted:#5a6a82;
+  --light-muted:#8a9ab2;
+}
+
+html{scroll-behavior:smooth}
+body{font-family:'Outfit',sans-serif;background:var(--white);color:var(--text);overflow-x:hidden}
+
+/* ── SCROLLBAR ── */
+::-webkit-scrollbar{width:4px}
+::-webkit-scrollbar-track{background:var(--off)}
+::-webkit-scrollbar-thumb{background:var(--sky);border-radius:2px}
+
+/* ── NAV ── */
+nav{
+  position:fixed;top:0;left:0;right:0;z-index:200;
+  display:flex;align-items:center;justify-content:space-between;
+  padding:0 5vw;height:70px;
+  background:rgba(255,255,255,0.97);
+  backdrop-filter:blur(20px);
+  border-bottom:1px solid rgba(232,237,245,0.8);
+  transition:box-shadow .3s,background .3s;
+}
+nav.scrolled{
+  box-shadow:0 4px 32px rgba(11,28,53,.1);
+  background:rgba(255,255,255,0.99);
+}
+.nav-logo{
+  font-family:'DM Serif Display',serif;
+  font-size:1.55rem;font-weight:400;
+  color:var(--navy);text-decoration:none;
+  display:flex;align-items:center;gap:.55rem;
+  letter-spacing:-.01em
+}
+.nav-logo-dot{
+  width:9px;height:9px;border-radius:50%;
+  background:var(--teal);display:inline-block;
+  box-shadow:0 0 0 3px rgba(0,194,168,.18)
+}
+.nav-links{display:flex;align-items:center;gap:.25rem;list-style:none}
+.nav-links a{
+  text-decoration:none;color:var(--muted);
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.95rem;font-weight:500;letter-spacing:.01em;
+  padding:.45rem .9rem;border-radius:8px;
+  transition:color .2s,background .2s;
+  position:relative;
+}
+.nav-links a:not(.nav-btn):hover{color:var(--navy);background:var(--off)}
+.nav-links a:not(.nav-btn)::after{
+  content:'';position:absolute;bottom:2px;left:.9rem;right:.9rem;
+  height:2px;background:var(--sky);border-radius:1px;
+  transform:scaleX(0);transition:transform .25s;transform-origin:left
+}
+.nav-links a:not(.nav-btn):hover::after{transform:scaleX(1)}
+.nav-btn{
+  background:linear-gradient(135deg,var(--navy),var(--navy-light))!important;
+  color:var(--white)!important;
+  padding:.55rem 1.5rem!important;border-radius:8px;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.9rem!important;font-weight:600!important;
+  letter-spacing:.02em;
+  transition:all .25s!important;
+  box-shadow:0 2px 12px rgba(11,28,53,.18)!important;
+  margin-left:.5rem;
+}
+.nav-btn:hover{
+  background:linear-gradient(135deg,var(--sky),var(--sky-light))!important;
+  transform:translateY(-1px)!important;
+  box-shadow:0 4px 18px rgba(45,107,228,.32)!important
+}
+.nav-btn::after{display:none!important}
+.hamburger{display:none;flex-direction:column;gap:5px;cursor:pointer;padding:4px}
+.hamburger span{width:22px;height:2px;background:var(--navy);border-radius:2px;transition:.3s}
+
+/* ── HERO ── */
+.hero{
+  min-height:100vh;
+  background:var(--navy);
+  display:flex;align-items:center;
+  padding:9rem 5vw 5rem;
+  position:relative;overflow:hidden
+}
+.hero-bg-grid{
+  position:absolute;inset:0;
+  background-image:
+    linear-gradient(rgba(255,255,255,.03) 1px,transparent 1px),
+    linear-gradient(90deg,rgba(255,255,255,.03) 1px,transparent 1px);
+  background-size:60px 60px;
+  pointer-events:none
+}
+.hero-blob{
+  position:absolute;top:-120px;right:-80px;
+  width:600px;height:600px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,107,228,.25) 0%,transparent 70%);
+  pointer-events:none
+}
+.hero-blob2{
+  position:absolute;bottom:-100px;left:10%;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,194,168,.12) 0%,transparent 70%);
+  pointer-events:none
+}
+.hero-inner{
+  max-width:1200px;margin:0 auto;width:100%;
+  display:grid;grid-template-columns:1fr 420px;
+  gap:4rem;align-items:center;position:relative;z-index:1
+}
+.hero-tag{
+  display:inline-flex;align-items:center;gap:.6rem;
+  background:rgba(45,107,228,.15);border:1px solid rgba(45,107,228,.3);
+  border-radius:100px;padding:.35rem 1rem;
+  font-size:.72rem;font-weight:600;letter-spacing:.1em;
+  text-transform:uppercase;color:var(--sky-light);
+  margin-bottom:1.6rem
+}
+.hero-tag-dot{width:6px;height:6px;border-radius:50%;background:var(--teal)}
+.hero h1{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2.8rem,4.8vw,4.4rem);
+  font-weight:400;line-height:1.1;
+  color:var(--white);margin-bottom:1.4rem;
+  letter-spacing:-.02em
+}
+.hero h1 .accent{color:var(--teal)}
+.hero h1 em{font-style:italic;color:var(--sky-light)}
+.hero-sub{
+  font-size:1.02rem;line-height:1.8;
+  color:rgba(255,255,255,.65);
+  max-width:540px;margin-bottom:2.4rem
+}
+.hero-sub strong{color:rgba(255,255,255,.9)}
+.hero-actions{display:flex;gap:1rem;flex-wrap:wrap;margin-bottom:3rem}
+.btn-primary{
+  background:var(--sky);color:var(--white);
+  padding:.85rem 2rem;border-radius:8px;
+  font-size:.85rem;font-weight:600;letter-spacing:.03em;
+  text-decoration:none;transition:all .25s;display:inline-block;
+  box-shadow:0 4px 20px rgba(45,107,228,.35)
+}
+.btn-primary:hover{background:var(--sky-light);transform:translateY(-2px);box-shadow:0 6px 28px rgba(45,107,228,.45)}
+.btn-ghost{
+  background:transparent;color:var(--white);
+  padding:.85rem 2rem;border-radius:8px;
+  font-size:.85rem;font-weight:500;letter-spacing:.03em;
+  text-decoration:none;transition:all .25s;display:inline-block;
+  border:1px solid rgba(255,255,255,.25)
+}
+.btn-ghost:hover{border-color:var(--teal);color:var(--teal);transform:translateY(-2px)}
+.hero-trust{
+  display:flex;align-items:center;gap:2rem;flex-wrap:wrap
+}
+.trust-item{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:.78rem;color:rgba(255,255,255,.5)
+}
+.trust-item .icon{font-size:1rem}
+
+/* Hero card */
+.hero-card{
+  background:rgba(255,255,255,.06);
+  border:1px solid rgba(255,255,255,.1);
+  border-radius:16px;padding:2rem;
+  backdrop-filter:blur(12px)
+}
+.hc-rating{
+  display:flex;align-items:center;gap:.6rem;
+  margin-bottom:1.6rem
+}
+.hc-stars{color:#fbbf24;font-size:1.1rem;letter-spacing:2px}
+.hc-score{
+  font-family:'Playfair Display',serif;
+  font-size:2.4rem;font-weight:900;color:var(--white);line-height:1
+}
+.hc-reviews{font-size:.75rem;color:rgba(255,255,255,.5);margin-top:.2rem}
+.hc-divider{height:1px;background:rgba(255,255,255,.08);margin:1.4rem 0}
+.hc-stats{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.hc-stat{text-align:center;padding:1rem;background:rgba(255,255,255,.04);border-radius:10px}
+.hc-stat-num{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:700;color:var(--teal);line-height:1
+}
+.hc-stat-lbl{font-size:.7rem;color:rgba(255,255,255,.5);margin-top:.3rem;text-transform:uppercase;letter-spacing:.08em}
+.hc-badges{display:flex;flex-direction:column;gap:.7rem;margin-top:1.4rem}
+.hc-badge{
+  display:flex;align-items:center;gap:.7rem;
+  font-size:.78rem;color:rgba(255,255,255,.7);
+  background:rgba(255,255,255,.04);border-radius:8px;padding:.6rem .9rem
+}
+.hc-badge-icon{font-size:1rem}
+
+/* ── MARQUEE ── */
+.marquee-wrap{
+  background:var(--sky);padding:.9rem 0;
+  overflow:hidden;white-space:nowrap
+}
+.marquee-inner{
+  display:inline-flex;gap:0;
+  animation:marquee 30s linear infinite
+}
+.marquee-item{
+  font-size:.72rem;font-weight:600;letter-spacing:.14em;
+  text-transform:uppercase;color:rgba(255,255,255,.9);
+  padding:0 2rem;display:flex;align-items:center;gap:1.4rem
+}
+.marquee-item::after{content:'✦';opacity:.6}
+@keyframes marquee{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+
+/* ── SECTIONS ── */
+.section{padding:4rem 5vw}
+.section-inner{max-width:1200px;margin:0 auto}
+.section-label{
+  display:inline-flex;align-items:center;gap:.6rem;
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.7rem;font-weight:700;letter-spacing:.16em;
+  text-transform:uppercase;color:var(--sky);
+  margin-bottom:1rem
+}
+.section-label::before{content:'';width:24px;height:2px;background:var(--sky);border-radius:1px}
+.section-title{
+  font-family:'DM Serif Display',serif;
+  font-size:clamp(2rem,3.5vw,3.1rem);
+  font-weight:400;line-height:1.18;
+  color:var(--navy);margin-bottom:.8rem;
+  letter-spacing:-.02em
+}
+.section-title em{font-style:italic;color:var(--sky)}
+.section-desc{
+  font-size:.97rem;line-height:1.8;
+  color:var(--muted);max-width:580px
+}
+
+/* ── WHO I HELP ── */
+.who{background:var(--off)}
+.who-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.5rem;margin-top:3rem
+}
+.who-card{
+  background:var(--white);border-radius:14px;
+  padding:2.2rem 1.8rem;
+  border:2px solid transparent;
+  transition:border-color .3s,transform .3s,box-shadow .3s;
+  position:relative;overflow:hidden
+}
+.who-card::before{
+  content:'';position:absolute;top:0;left:0;right:0;height:4px;
+  border-radius:14px 14px 0 0
+}
+.who-card.fresher::before{background:linear-gradient(90deg,var(--teal),#00e5c9)}
+.who-card.mid::before{background:linear-gradient(90deg,var(--sky),var(--sky-light))}
+.who-card.senior::before{background:linear-gradient(90deg,#8b5cf6,#a78bfa)}
+.who-card:hover{transform:translateY(-6px);box-shadow:0 20px 50px rgba(11,28,53,.1);border-color:var(--grey)}
+.who-icon{font-size:2.2rem;margin-bottom:1.2rem}
+.who-title{font-family:'Playfair Display',serif;font-size:1.4rem;font-weight:700;color:var(--navy);margin-bottom:.3rem}
+.who-sub{font-size:.78rem;font-weight:600;text-transform:uppercase;letter-spacing:.08em;color:var(--teal);margin-bottom:1rem}
+.who-desc{font-size:.88rem;line-height:1.75;color:var(--muted);margin-bottom:1.4rem}
+.who-list{list-style:none;display:flex;flex-direction:column;gap:.5rem}
+.who-list li{
+  font-size:.82rem;color:var(--text);
+  padding-left:1.4rem;position:relative
+}
+.who-list li::before{
+  content:'✓';position:absolute;left:0;
+  color:var(--teal);font-weight:700
+}
+
+/* ── ABOUT ── */
+.about-grid{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:5rem;align-items:center
+}
+.about-img-wrap{position:relative}
+.about-img-card{
+  background:var(--navy);border-radius:16px;
+  padding:2.5rem;color:var(--white);
+  position:relative;overflow:hidden
+}
+.about-img-card::before{
+  content:'';position:absolute;top:-60px;right:-60px;
+  width:220px;height:220px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,107,228,.3) 0%,transparent 70%)
+}
+.about-img-card::after{
+  content:'';position:absolute;bottom:-40px;left:-40px;
+  width:160px;height:160px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,194,168,.2) 0%,transparent 70%)
+}
+.acard-name{
+  font-family:'Playfair Display',serif;
+  font-size:2rem;font-weight:700;margin-bottom:.3rem;position:relative;z-index:1
+}
+.acard-role{font-size:.82rem;color:rgba(255,255,255,.6);margin-bottom:2rem;position:relative;z-index:1}
+.acard-metrics{
+  display:grid;grid-template-columns:1fr 1fr;gap:1rem;
+  position:relative;z-index:1
+}
+.acard-metric{
+  background:rgba(255,255,255,.07);border-radius:10px;
+  padding:1rem;text-align:center
+}
+.acard-metric-num{
+  font-family:'Playfair Display',serif;
+  font-size:1.8rem;font-weight:700;color:var(--teal);line-height:1
+}
+.acard-metric-lbl{font-size:.68rem;color:rgba(255,255,255,.5);margin-top:.3rem;letter-spacing:.06em;text-transform:uppercase}
+.about-float{
+  position:absolute;bottom:-24px;right:-24px;
+  background:var(--white);border-radius:12px;
+  padding:1rem 1.4rem;
+  box-shadow:0 12px 40px rgba(11,28,53,.15);
+  display:flex;align-items:center;gap:.8rem
+}
+.float-stars{color:#fbbf24;font-size:.9rem}
+.float-text{font-size:.75rem;font-weight:600;color:var(--navy)}
+.float-sub{font-size:.68rem;color:var(--muted)}
+.about-content{}
+.about-content p{font-size:.95rem;line-height:1.85;color:var(--muted);margin-bottom:1.2rem}
+.about-content p strong{color:var(--navy);font-weight:600}
+.about-pillars{
+  display:grid;grid-template-columns:1fr 1fr;
+  gap:.8rem;margin-top:1.8rem
+}
+.pillar{
+  display:flex;align-items:flex-start;gap:.7rem;
+  padding:1rem;background:var(--off);border-radius:10px
+}
+.pillar-icon{font-size:1.2rem;margin-top:.1rem}
+.pillar-title{font-size:.82rem;font-weight:600;color:var(--navy);margin-bottom:.2rem}
+.pillar-desc{font-size:.74rem;color:var(--muted);line-height:1.5}
+
+/* ── SERVICES ── */
+.services{background:var(--navy)}
+.services .section-title{color:var(--white)}
+.services .section-desc{color:rgba(255,255,255,.55)}
+.services .section-label{color:var(--teal)}
+.services .section-label::before{background:var(--teal)}
+.services-grid{
+  display:grid;grid-template-columns:repeat(3,1fr);
+  gap:1.2rem;margin-top:3rem
+}
+.svc-card{
+  background:rgba(255,255,255,.05);
+  border:1px solid rgba(255,255,255,.08);
+  border-radius:14px;padding:2rem;
+  transition:background .3s,border-color .3s,transform .3s;
+  cursor:default
+}
+.svc-card:hover{
+  background:rgba(255,255,255,.09);
+  border-color:rgba(45,107,228,.4);
+  transform:translateY(-4px)
+}
+.svc-num{
+  font-size:.7rem;font-weight:700;letter-spacing:.12em;
+  text-transform:uppercase;color:var(--sky-light);
+  margin-bottom:1rem
+}
+.svc-icon{font-size:1.8rem;margin-bottom:1rem}
+.svc-title{
+  font-family:'Playfair Display',serif;
+  font-size:1.15rem;font-weight:700;color:var(--white);
+  margin-bottom:.7rem
+}
+.svc-desc{font-size:.82rem;line-height:1.7;color:rgba(255,255,255,.5);margin-bottom:1.2rem}
+.svc-tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.svc-tag{
+  font-size:.68rem;font-weight:500;letter-spacing:.04em;
+  background:rgba(45,107,228,.15);color:var(--sky-light);
+  padding:.3rem .7rem;border-radius:100px;
+  border:1px solid rgba(45,107,228,.2)
+}
+.svc-tag.teal{background:rgba(0,194,168,.12);color:var(--teal);border-color:rgba(0,194,168,.2)}
+
+/* ── PROCESS ── */
+.process{background:var(--off)}
+.process-grid{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;margin-top:3rem;position:relative
+}
+.process-grid::before{
+  content:'';position:absolute;
+  top:2.8rem;left:calc(12.5% + 1.5rem);right:calc(12.5% + 1.5rem);
+  height:2px;background:linear-gradient(90deg,var(--sky),var(--teal));
+  border-radius:2px
+}
+.proc-card{
+  background:var(--white);border-radius:14px;
+  padding:2rem 1.5rem;text-align:center;
+  box-shadow:0 4px 20px rgba(11,28,53,.05);
+  position:relative
+}
+.proc-num{
+  width:56px;height:56px;border-radius:50%;
+  background:var(--navy);color:var(--white);
+  font-family:'Playfair Display',serif;
+  font-size:1.3rem;font-weight:700;
+  display:flex;align-items:center;justify-content:center;
+  margin:0 auto 1.4rem;position:relative;z-index:1
+}
+.proc-num.active{background:var(--sky)}
+.proc-title{font-size:.9rem;font-weight:700;color:var(--navy);margin-bottom:.6rem}
+.proc-desc{font-size:.78rem;line-height:1.65;color:var(--muted)}
+
+/* ── RESULTS ── */
+.results-row{
+  display:grid;grid-template-columns:repeat(4,1fr);
+  gap:1.5rem;margin-top:3rem
+}
+.result-card{
+  text-align:center;padding:2.5rem 1.5rem;
+  border-radius:14px;background:var(--white);
+  border:1px solid var(--grey);
+  transition:transform .35s cubic-bezier(.22,1,.36,1),box-shadow .35s;
+  position:relative;overflow:hidden
+}
+.result-card::before{
+  content:'';position:absolute;inset:0;
+  background:linear-gradient(135deg,rgba(45,107,228,.03),rgba(0,194,168,.04));
+  opacity:0;transition:opacity .35s
+}
+.result-card:hover{transform:translateY(-6px);box-shadow:0 20px 48px rgba(11,28,53,.1)}
+.result-card:hover::before{opacity:1}
+.result-num{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:3.4rem;font-weight:700;
+  background:linear-gradient(135deg,var(--sky),var(--teal));
+  -webkit-background-clip:text;-webkit-text-fill-color:transparent;
+  background-clip:text;line-height:1;margin-bottom:.6rem;
+  letter-spacing:-.03em
+}
+.result-lbl{
+  font-family:'Space Grotesk',sans-serif;
+  font-size:.9rem;font-weight:700;
+  color:var(--navy);margin-bottom:.4rem;
+  letter-spacing:-.01em
+}
+.result-sub{font-size:.74rem;color:var(--muted);line-height:1.55}
+
+/* ── TESTIMONIALS ── */
+.testimonials{background:var(--off);overflow:hidden}
+.trows{margin-top:3rem;display:flex;flex-direction:column;gap:1.2rem}
+.trow{display:flex;gap:1.2rem;overflow:hidden;
+  mask-image:linear-gradient(to right,transparent,black 8%,black 92%,transparent)}
+.trow-inner{display:flex;gap:1.2rem;animation:tslide 38s linear infinite;flex-shrink:0}
+.trow-inner.rev{animation:tslide-r 42s linear infinite}
+@keyframes tslide{from{transform:translateX(0)}to{transform:translateX(-50%)}}
+@keyframes tslide-r{from{transform:translateX(-50%)}to{transform:translateX(0)}}
+.tc{
+  min-width:300px;max-width:300px;flex-shrink:0;
+  background:var(--white);border-radius:12px;
+  padding:1.6rem;border:1px solid var(--grey)
+}
+.tc-stars{color:#fbbf24;font-size:.85rem;letter-spacing:2px;margin-bottom:.9rem}
+.tc-text{
+  font-size:.83rem;line-height:1.72;color:var(--muted);
+  margin-bottom:1.2rem;font-style:italic
+}
+.tc-author{font-size:.82rem;font-weight:700;color:var(--navy)}
+.tc-role{font-size:.72rem;color:var(--muted);margin-top:.2rem}
+.tc-tag{
+  display:inline-block;font-size:.66rem;font-weight:600;
+  letter-spacing:.06em;text-transform:uppercase;
+  background:rgba(45,107,228,.08);color:var(--sky);
+  padding:.25rem .65rem;border-radius:100px;
+  margin-top:.7rem
+}
+
+/* ── CTA ── */
+.cta-section{
+  background:var(--navy);
+  padding:5rem 5vw;text-align:center;
+  position:relative;overflow:hidden
+}
+.cta-section::before{
+  content:'';position:absolute;top:-200px;left:50%;
+  transform:translateX(-50%);
+  width:800px;height:800px;border-radius:50%;
+  background:radial-gradient(circle,rgba(45,107,228,.15) 0%,transparent 70%);
+  pointer-events:none
+}
+.cta-section::after{
+  content:'';position:absolute;bottom:-100px;right:-100px;
+  width:400px;height:400px;border-radius:50%;
+  background:radial-gradient(circle,rgba(0,194,168,.1) 0%,transparent 70%);
+  pointer-events:none
+}
+.cta-inner{max-width:700px;margin:0 auto;position:relative;z-index:1}
+.cta-section .section-label{justify-content:center;color:var(--teal)}
+.cta-section .section-label::before{background:var(--teal)}
+.cta-section .section-title{color:var(--white);text-align:center;max-width:none}
+.cta-section .section-title em{color:var(--teal)}
+.cta-desc{font-size:1rem;line-height:1.8;color:rgba(255,255,255,.6);margin:1.2rem 0 2.5rem}
+.cta-buttons{display:flex;gap:1rem;justify-content:center;flex-wrap:wrap;margin-bottom:3rem}
+.btn-teal{
+  background:var(--teal);color:var(--navy);
+  padding:.9rem 2.2rem;border-radius:8px;
+  font-size:.85rem;font-weight:700;letter-spacing:.04em;
+  text-decoration:none;transition:all .25s;display:inline-block;
+  box-shadow:0 4px 20px rgba(0,194,168,.3)
+}
+.btn-teal:hover{background:#00e0c3;transform:translateY(-2px);box-shadow:0 6px 28px rgba(0,194,168,.45)}
+.cta-contact{
+  display:flex;justify-content:center;gap:2.5rem;flex-wrap:wrap
+}
+.contact-item{
+  display:flex;align-items:center;gap:.5rem;
+  font-size:.8rem;color:rgba(255,255,255,.5)
+}
+.contact-item a{color:rgba(255,255,255,.5);text-decoration:none;transition:color .2s}
+.contact-item a:hover{color:var(--teal)}
+.contact-item .ci{font-size:1rem}
+
+/* ── FOOTER ── */
+footer{
+  background:#060f1e;
+  padding:2rem 5vw;
+  display:flex;align-items:center;justify-content:space-between;
+  flex-wrap:wrap;gap:1rem
+}
+.footer-name{
+  font-family:'Playfair Display',serif;
+  font-size:1.1rem;font-weight:700;color:rgba(255,255,255,.7)
+}
+.footer-links{display:flex;gap:2rem}
+.footer-links a{
+  font-size:.72rem;text-decoration:none;
+  color:rgba(255,255,255,.35);letter-spacing:.08em;
+  text-transform:uppercase;transition:color .2s
+}
+.footer-links a:hover{color:var(--teal)}
+.footer-copy{font-size:.7rem;color:rgba(255,255,255,.25)}
+
+/* ── ANIMATIONS ── */
+.reveal{
+  opacity:0;transform:translateY(32px);
+  transition:opacity .75s cubic-bezier(.22,1,.36,1),transform .75s cubic-bezier(.22,1,.36,1)
+}
+.reveal.shown{opacity:1;transform:none}
+.reveal-d1{transition-delay:.12s}
+.reveal-d2{transition-delay:.24s}
+.reveal-d3{transition-delay:.36s}
+
+/* Floating hero blobs */
+.hero-blob{animation:blobFloat 8s ease-in-out infinite}
+.hero-blob2{animation:blobFloat 11s ease-in-out infinite reverse}
+@keyframes blobFloat{
+  0%,100%{transform:translateY(0) scale(1)}
+  50%{transform:translateY(-30px) scale(1.06)}
+}
+
+/* Hero inner fade-in on load */
+.hero-inner > *{
+  opacity:0;transform:translateY(24px);
+  animation:heroIn .9s cubic-bezier(.22,1,.36,1) forwards
+}
+.hero-inner > *:nth-child(1){animation-delay:.1s}
+.hero-inner > *:nth-child(2){animation-delay:.35s}
+@keyframes heroIn{to{opacity:1;transform:none}}
+
+/* Pulse on teal dot */
+.nav-logo-dot{animation:dotPulse 2.4s ease-in-out infinite}
+@keyframes dotPulse{
+  0%,100%{box-shadow:0 0 0 3px rgba(0,194,168,.18)}
+  50%{box-shadow:0 0 0 7px rgba(0,194,168,.08)}
+}
+
+/* Service card shimmer on hover */
+.svc-card{position:relative;overflow:hidden}
+.svc-card::after{
+  content:'';position:absolute;top:-60%;left:-60%;
+  width:50%;height:200%;
+  background:linear-gradient(105deg,transparent 40%,rgba(255,255,255,.05) 50%,transparent 60%);
+  transition:left .55s ease
+}
+.svc-card:hover::after{left:130%}
+
+/* Who card accent bar animate */
+.who-card::before{transition:height .3s ease}
+.who-card:hover::before{height:6px}
+
+/* Result card counter pop */
+@keyframes countPop{
+  0%{transform:scale(.85);opacity:0}
+  70%{transform:scale(1.06)}
+  100%{transform:scale(1);opacity:1}
+}
+.result-num.popped{animation:countPop .55s cubic-bezier(.22,1,.36,1) forwards}
+
+/* ── MOBILE ── */
+@media(max-width:900px){
+  nav{padding:0 5vw}
+  .nav-links{display:none;flex-direction:column;gap:.5rem;
+    position:absolute;top:70px;left:0;right:0;
+    background:var(--white);padding:1.2rem 5vw;
+    border-bottom:1px solid var(--grey);box-shadow:0 8px 24px rgba(11,28,53,.08)}
+  .nav-links.open{display:flex}
+  .hamburger{display:flex}
+  .hero{padding:7rem 5vw 3.5rem}
+  .hero-inner{grid-template-columns:1fr;gap:2.5rem}
+  .who-grid,.services-grid{grid-template-columns:1fr}
+  .about-grid{grid-template-columns:1fr;gap:3rem}
+  .process-grid{grid-template-columns:1fr 1fr;gap:1rem}
+  .process-grid::before{display:none}
+  .results-row{grid-template-columns:1fr 1fr;gap:1rem}
+  .section{padding:3rem 5vw}
+}
+@media(max-width:560px){
+  .hero h1{font-size:2.2rem}
+  .results-row{grid-template-columns:1fr}
+  .process-grid{grid-template-columns:1fr}
+  .about-pillars{grid-template-columns:1fr}
+  .hero-actions{flex-direction:column;align-items:flex-start}
+}
+</style>
+</head>
+<body>
+
+<!-- NAV -->
+<nav id="nav">
+  <a href="#" class="nav-logo">
+    <span class="nav-logo-dot"></span>Prasanna
+  </a>
+  <ul class="nav-links" id="navLinks">
+    <li><a href="#about">About</a></li>
+    <li><a href="#who">Who I Help</a></li>
+    <li><a href="#services">Services</a></li>
+    <li><a href="#reviews">Reviews</a></li>
+    <li><a href="#contact" class="nav-btn">Get Started</a></li>
+  </ul>
+  <div class="hamburger" id="ham" onclick="toggleNav()">
+    <span></span><span></span><span></span>
+  </div>
+</nav>
+
+<!-- HERO -->
+<section class="hero" id="home">
+  <div class="hero-bg-grid"></div>
+  <div class="hero-blob"></div>
+  <div class="hero-blob2"></div>
+  <div class="hero-inner">
+    <div>
+      <h1>
+        Your Next Career Move<br>
+        Starts With A <em>Stronger</em><br>
+        <span class="accent">Professional Presence.</span>
+      </h1>
+      <p class="hero-sub">
+        Recruiters decide in 7 seconds. Make yours count. I build <strong>resumes, LinkedIn profiles, cover letters and portfolios</strong> that communicate your value instantly — so the right roles find you, not the other way around. Trusted by 5,000+ professionals across 50+ countries.
+      </p>
+      <div class="hero-actions">
+        <a href="#services" class="btn-primary">Explore Services</a>
+        <a href="#reviews" class="btn-ghost">See 42 Reviews ★</a>
+      </div>
+      <div class="hero-trust">
+        <div class="trust-item"><span class="icon">✅</span> ATS-Optimized</div>
+        <div class="trust-item"><span class="icon">⚡</span> 4–5 Working Days</div>
+        <div class="trust-item"><span class="icon">🌍</span> Clients Worldwide</div>
+        <div class="trust-item"><span class="icon">💬</span> 100% Response Rate</div>
+      </div>
+    </div>
+    <div class="hero-card">
+      <div class="hc-rating">
+        <div>
+          <div class="hc-score">5.0</div>
+          <div class="hc-stars">★★★★★</div>
+          <div class="hc-reviews">42 verified client reviews</div>
+        </div>
+      </div>
+      <div class="hc-divider"></div>
+      <div class="hc-stats">
+        <div class="hc-stat">
+          <div class="hc-stat-num">5K+</div>
+          <div class="hc-stat-lbl">Clients Served</div>
+        </div>
+        <div class="hc-stat">
+          <div class="hc-stat-num">9+</div>
+          <div class="hc-stat-lbl">Years Experience</div>
+        </div>
+        <div class="hc-stat">
+          <div class="hc-stat-num">3×</div>
+          <div class="hc-stat-lbl">More Interviews</div>
+        </div>
+        <div class="hc-stat">
+          <div class="hc-stat-num">50+</div>
+          <div class="hc-stat-lbl">Countries</div>
+        </div>
+      </div>
+      <div class="hc-badges">
+        <div class="hc-badge"><span class="hc-badge-icon">🏅</span> Certified Professional Resume Writer</div>
+        <div class="hc-badge"><span class="hc-badge-icon">⏱</span> Response within 24 hours · 100% rate</div>
+        <div class="hc-badge"><span class="hc-badge-icon">🌐</span> Remote — serving clients worldwide</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- MARQUEE -->
+<div class="marquee-wrap">
+  <div class="marquee-inner">
+    <span class="marquee-item">Resume Writing</span>
+    <span class="marquee-item">LinkedIn Optimization</span>
+    <span class="marquee-item">Cover Letters</span>
+    <span class="marquee-item">Portfolio Design</span>
+    <span class="marquee-item">Personal Branding</span>
+    <span class="marquee-item">Website Development</span>
+    <span class="marquee-item">Executive Resumes</span>
+    <span class="marquee-item">ATS Optimization</span>
+    <span class="marquee-item">Career Mentoring</span>
+    <span class="marquee-item">Freelance Profiles</span>
+    <span class="marquee-item">Resume Writing</span>
+    <span class="marquee-item">LinkedIn Optimization</span>
+    <span class="marquee-item">Cover Letters</span>
+    <span class="marquee-item">Portfolio Design</span>
+    <span class="marquee-item">Personal Branding</span>
+    <span class="marquee-item">Website Development</span>
+    <span class="marquee-item">Executive Resumes</span>
+    <span class="marquee-item">ATS Optimization</span>
+    <span class="marquee-item">Career Mentoring</span>
+    <span class="marquee-item">Freelance Profiles</span>
+  </div>
+</div>
+
+<!-- WHO I HELP -->
+<section class="section who" id="who">
+  <div class="section-inner">
+    <div class="section-label">Who I Help</div>
+    <h2 class="section-title">Your Career Stage.<br>My <em>Tailored</em> Strategy.</h2>
+    <p class="section-desc">No generic templates. Every document is crafted around your exact goals, experience level, and target industry.</p>
+    <div class="who-grid">
+      <div class="who-card fresher reveal">
+        <div class="who-icon">🎓</div>
+        <div class="who-title">Freshers & Graduates</div>
+        <div class="who-sub">Entry Level · 0–2 Years</div>
+        <p class="who-desc">Your qualifications deserve to be seen. I translate your academic background, internships, and projects into a professional narrative that signals readiness, ambition, and real-world value — giving you a genuine edge from day one.</p>
+        <ul class="who-list">
+          <li>Stand out in graduate applicant pools</li>
+          <li>Highlight internships & academic projects powerfully</li>
+          <li>Build a LinkedIn that attracts recruiters</li>
+          <li>Craft cover letters that open doors</li>
+          <li>Land your first role faster — 4–5 day turnaround</li>
+        </ul>
+      </div>
+      <div class="who-card mid reveal reveal-d1">
+        <div class="who-icon">📈</div>
+        <div class="who-title">Mid-Level Professionals</div>
+        <div class="who-sub">Growing Career · 3–10 Years</div>
+        <p class="who-desc">Experience alone doesn't get you hired — the right positioning does. I reshape your career story to highlight leadership, quantifiable impact, and progression, crafting documents that put you firmly in front of decision-makers for the roles you're ready to own.</p>
+        <ul class="who-list">
+          <li>Reframe experience as measurable achievements</li>
+          <li>Target promotions & lateral moves strategically</li>
+          <li>Optimise LinkedIn for maximum recruiter visibility</li>
+          <li>Navigate career changes with confidence</li>
+          <li>Build authority through personal branding</li>
+        </ul>
+      </div>
+      <div class="who-card senior reveal reveal-d2">
+        <div class="who-icon">🏆</div>
+        <div class="who-title">Senior & Executive Leaders</div>
+        <div class="who-sub">Leadership Level · 10+ Years</div>
+        <p class="who-desc">Senior professionals are judged on vision, scale, and business impact — not just job titles. I craft executive-grade profiles that articulate your strategic contributions, leadership legacy, and commercial acumen with the gravitas global hiring committees expect.</p>
+        <ul class="who-list">
+          <li>Executive-level storytelling & positioning</li>
+          <li>Board-ready profiles for senior roles</li>
+          <li>Thought leadership on LinkedIn</li>
+          <li>Global market-ready documents</li>
+          <li>Confidential & high-touch service</li>
+        </ul>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- ABOUT -->
+<section class="section" id="about">
+  <div class="section-inner">
+    <div class="about-grid">
+      <div class="about-img-wrap">
+        <div class="about-img-card">
+          <div class="acard-name">Prasanna</div>
+          <div class="acard-role">Resume & LinkedIn Profile Strategist · HRA Solutions<br>Certified Professional Resume Writer</div>
+          <div class="acard-metrics">
+            <div class="acard-metric">
+              <div class="acard-metric-num">9+</div>
+              <div class="acard-metric-lbl">Years Crafting</div>
+            </div>
+            <div class="acard-metric">
+              <div class="acard-metric-num">5K+</div>
+              <div class="acard-metric-lbl">Clients Worldwide</div>
+            </div>
+            <div class="acard-metric">
+              <div class="acard-metric-num">5.0★</div>
+              <div class="acard-metric-lbl">Perfect Rating</div>
+            </div>
+            <div class="acard-metric">
+              <div class="acard-metric-num">3×</div>
+              <div class="acard-metric-lbl">Interview Boost</div>
+            </div>
+          </div>
+        </div>
+        <div class="about-float">
+          <div>
+            <div class="float-stars">★★★★★</div>
+            <div class="float-text">42 Five-Star Reviews</div>
+            <div class="float-sub">on LinkedIn Services</div>
+          </div>
+        </div>
+      </div>
+      <div class="about-content">
+        <div class="section-label">About Me</div>
+        <h2 class="section-title">The Career Strategist<br>Behind Your <em>Next Big Role</em></h2>
+        <p>I'm <strong>Prasanna</strong>, a Certified Professional Resume Writer and Resume & LinkedIn Profile Strategist at <strong>HRA Solutions</strong>. With over 9 years of experience, I've partnered with professionals across every industry and every career stage — from ambitious graduates to Fortune 500 executives.</p>
+        <p>My philosophy is simple: <strong>great career documents don't just list what you've done — they tell the world what you're capable of.</strong> I combine strategic storytelling, deep industry knowledge, and ATS expertise to build profiles that convert.</p>
+        <p>I've worked with clients from <strong>50+ countries</strong>, helping them break into competitive markets, transition industries, and land roles they genuinely love — with up to 3× more interview callbacks after working with me.</p>
+        <div class="about-pillars">
+          <div class="pillar">
+            <div class="pillar-icon">🎯</div>
+            <div>
+              <div class="pillar-title">Strategic Positioning</div>
+              <div class="pillar-desc">We don't format — we craft narratives that win offers.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🤖</div>
+            <div>
+              <div class="pillar-title">ATS-First Approach</div>
+              <div class="pillar-desc">Passes every filter. Impresses every human.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">🌍</div>
+            <div>
+              <div class="pillar-title">Global Standards</div>
+              <div class="pillar-desc">Executive-grade profiles for markets worldwide.</div>
+            </div>
+          </div>
+          <div class="pillar">
+            <div class="pillar-icon">⚡</div>
+            <div>
+              <div class="pillar-title">Fast Turnaround</div>
+              <div class="pillar-desc">4–5 working days. No compromise on quality or personalisation.</div>
+            </div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- SERVICES -->
+<section class="section services" id="services">
+  <div class="section-inner">
+    <div class="section-label">What I Offer</div>
+    <h2 class="section-title">Services Built to<br><em>Get You Hired</em></h2>
+    <p class="section-desc">Every service is fully tailored to your goals, your industry, and your career stage — never a copy-paste job.</p>
+    <div class="services-grid">
+      <div class="svc-card reveal">
+        <div class="svc-num">01</div>
+        <div class="svc-icon">📄</div>
+        <div class="svc-title">Strategic Resume Writing</div>
+        <p class="svc-desc">From entry-level to C-suite — resumes that sail through ATS filters and make hiring managers stop and read. Impact-first language, keyword-rich, and tailored for your target role.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">ATS Optimised</span>
+          <span class="svc-tag teal">All Levels</span>
+          <span class="svc-tag">Revisions Included</span>
+        </div>
+      </div>
+      <div class="svc-card reveal reveal-d1">
+        <div class="svc-num">02</div>
+        <div class="svc-icon">💼</div>
+        <div class="svc-title">LinkedIn Optimisation</div>
+        <p class="svc-desc">Transform your profile into a recruiter magnet. Strategic headline, compelling summary, optimised experience section — plus a keyword strategy that puts you in the right searches.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Profile Rewrite</span>
+          <span class="svc-tag teal">Keyword Strategy</span>
+          <span class="svc-tag">Visibility Boost</span>
+        </div>
+      </div>
+      <div class="svc-card reveal reveal-d2">
+        <div class="svc-num">03</div>
+        <div class="svc-icon">✍️</div>
+        <div class="svc-title">Cover Letters</div>
+        <p class="svc-desc">Personalised, authentic cover letters that speak directly to hiring managers. Written in your voice, aligned to the role, and crafted to reinforce your resume's strongest points.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Role-Specific</span>
+          <span class="svc-tag teal">Multiple Versions</span>
+          <span class="svc-tag">Fast Delivery</span>
+        </div>
+      </div>
+      <div class="svc-card reveal">
+        <div class="svc-num">04</div>
+        <div class="svc-icon">🗂️</div>
+        <div class="svc-title">Portfolio Design</div>
+        <p class="svc-desc">A professionally designed portfolio that showcases your projects, skills, and personal brand in one stunning, shareable page — perfect to link on LinkedIn and include in applications.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Custom Design</span>
+          <span class="svc-tag teal">Mobile-Ready</span>
+          <span class="svc-tag">Shareable Link</span>
+        </div>
+      </div>
+      <div class="svc-card reveal reveal-d1">
+        <div class="svc-num">05</div>
+        <div class="svc-icon">🌐</div>
+        <div class="svc-title">Website Development</div>
+        <p class="svc-desc">Personal websites and business sites that make a lasting impression. Clean design, fast loading, SEO-ready — built to convert visitors into clients and opportunities into offers.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Personal & Business</span>
+          <span class="svc-tag teal">SEO Ready</span>
+          <span class="svc-tag">Modern Design</span>
+        </div>
+      </div>
+      <div class="svc-card reveal reveal-d2">
+        <div class="svc-num">06</div>
+        <div class="svc-icon">🎨</div>
+        <div class="svc-title">Personal Branding</div>
+        <p class="svc-desc">Build a consistent, powerful identity across LinkedIn, Upwork, Fiverr and beyond. From profile strategy to digital marketing — your brand working for you 24/7.</p>
+        <div class="svc-tags">
+          <span class="svc-tag">Brand Strategy</span>
+          <span class="svc-tag teal">Freelance Profiles</span>
+          <span class="svc-tag">Digital Marketing</span>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- PROCESS -->
+<section class="section process">
+  <div class="section-inner">
+    <div class="section-label">How It Works</div>
+    <h2 class="section-title">Simple, Clear &<br><em>Collaborative</em></h2>
+    <p class="section-desc">A process designed around you — transparent at every step, with your goals at the centre.</p>
+    <div class="process-grid">
+      <div class="proc-card reveal">
+        <div class="proc-num active">01</div>
+        <div class="proc-title">Discovery</div>
+        <p class="proc-desc">We start with a conversation. I learn your goals, target roles, industry, and what makes you uniquely valuable.</p>
+      </div>
+      <div class="proc-card reveal reveal-d1">
+        <div class="proc-num">02</div>
+        <div class="proc-title">Strategy & Craft</div>
+        <p class="proc-desc">I build your narrative — positioning your experience with the right language, keywords, and structure.</p>
+      </div>
+      <div class="proc-card reveal reveal-d2">
+        <div class="proc-num">03</div>
+        <div class="proc-title">Review & Refine</div>
+        <p class="proc-desc">You receive the draft and share feedback. I revise until every word reflects you perfectly.</p>
+      </div>
+      <div class="proc-card reveal reveal-d3">
+        <div class="proc-num">04</div>
+        <div class="proc-title">Deliver & Launch</div>
+        <p class="proc-desc">Final polished documents delivered — and you step into the market with a profile that gets results.</p>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- RESULTS -->
+<section class="section" style="background:var(--white)">
+  <div class="section-inner">
+    <div style="text-align:center">
+      <div class="section-label" style="justify-content:center">Proven Results</div>
+      <h2 class="section-title" style="text-align:center;max-width:none">The Numbers Behind<br>Every <em>Success Story</em></h2>
+    </div>
+    <div class="results-row">
+      <div class="result-card reveal">
+        <div class="result-num">5K+</div>
+        <div class="result-lbl">Clients Served</div>
+        <div class="result-sub">Professionals across 50+ countries and every major industry — from tech to healthcare, finance to creative.</div>
+      </div>
+      <div class="result-card reveal reveal-d1">
+        <div class="result-num">3×</div>
+        <div class="result-lbl">More Interviews</div>
+        <div class="result-sub">Average improvement clients report within 30 days of using their new resume and LinkedIn profile.</div>
+      </div>
+      <div class="result-card reveal reveal-d2">
+        <div class="result-num">5.0★</div>
+        <div class="result-lbl">Perfect Rating</div>
+        <div class="result-sub">42 verified five-star reviews on LinkedIn Services — every single client satisfied.</div>
+      </div>
+      <div class="result-card reveal reveal-d3">
+        <div class="result-num">9+</div>
+        <div class="result-lbl">Years of Expertise</div>
+        <div class="result-sub">Deep domain knowledge built through thousands of real-world career transformations globally.</div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- TESTIMONIALS -->
+<section class="section testimonials" id="reviews">
+  <div class="section-inner">
+    <div style="text-align:center;margin-bottom:.5rem">
+      <div class="section-label" style="justify-content:center">Client Reviews</div>
+      <h2 class="section-title" style="text-align:center;max-width:none">Real People.<br><em>Real Results.</em></h2>
+      <p class="section-desc" style="margin:0 auto;text-align:center">42 five-star reviews from professionals across the globe.</p>
+    </div>
+  </div>
+  <div class="trows">
+    <div class="trow">
+      <div class="trow-inner">
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Prasanna delivered an excellent ATS-friendly resume with clear structure and strong impact. Very professional, responsive, and open to revisions."</p><div class="tc-author">Dinesh John</div><div class="tc-role">Product Manager | Solutions Delivery Manager</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Prasanna understood my academic and executive background well. Highly professional and collaborative throughout the process."</p><div class="tc-author">Ayanda Kumalo</div><div class="tc-role">Fund Operations Specialist</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"My resume and LinkedIn profile were professionally optimized. Since the updates, I've received more interview calls and recruiter engagement than ever."</p><div class="tc-author">Ariful Islam</div><div class="tc-role">Translational Research Specialist</div><span class="tc-tag">Resume Review</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Exceptional service — professionalism, clarity, and strong attention to detail. Personalized, ATS-optimised documents that accurately reflect experience."</p><div class="tc-author">Mohamed Riyas</div><div class="tc-role">Engineering Manager | Technical Lead</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Prasanna transformed my outdated resume into a modern, powerful version that truly represents me. Highly recommend her work!"</p><div class="tc-author">Bhavani Koppula</div><div class="tc-role">Certified Professional Resume Writer</div><span class="tc-tag">Resume Writing</span></div>
+        <!-- duplicates -->
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Prasanna delivered an excellent ATS-friendly resume with clear structure and strong impact. Very professional, responsive, and open to revisions."</p><div class="tc-author">Dinesh John</div><div class="tc-role">Product Manager | Solutions Delivery Manager</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Prasanna understood my academic and executive background well. Highly professional and collaborative throughout the process."</p><div class="tc-author">Ayanda Kumalo</div><div class="tc-role">Fund Operations Specialist</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"My resume and LinkedIn profile were professionally optimized. Since the updates, I've received more interview calls and recruiter engagement than ever."</p><div class="tc-author">Ariful Islam</div><div class="tc-role">Translational Research Specialist</div><span class="tc-tag">Resume Review</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Exceptional service — professionalism, clarity, and strong attention to detail. Personalized, ATS-optimised documents that accurately reflect experience."</p><div class="tc-author">Mohamed Riyas</div><div class="tc-role">Engineering Manager | Technical Lead</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Prasanna transformed my outdated resume into a modern, powerful version that truly represents me. Highly recommend her work!"</p><div class="tc-author">Bhavani Koppula</div><div class="tc-role">Certified Professional Resume Writer</div><span class="tc-tag">Resume Writing</span></div>
+      </div>
+    </div>
+    <div class="trow">
+      <div class="trow-inner rev">
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Everything is now clear, professional, and tailored to my goals. Communication was smooth, and the results exceeded my expectations. Highly recommended!"</p><div class="tc-author">Ginika M.</div><div class="tc-role">CBT Therapist | NHS Talking Therapies</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Prasanna's resume and LinkedIn overhaul greatly improved my profile. Professional, timely and easy to reach. Incredibly adaptable to client needs."</p><div class="tc-author">Shehan Soysa</div><div class="tc-role">GIS Professional | Field Technician</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Created different resume versions giving me flexibility with applications, plus helped me optimize my LinkedIn account to perfection. Outstanding service!"</p><div class="tc-author">Fergal Crehan</div><div class="tc-role">Senior Data Protection & Privacy Leader</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"My LinkedIn profile was transformed into a compelling, polished representation of my personal brand. I now feel more confident pursuing new opportunities."</p><div class="tc-author">Otiato Robert</div><div class="tc-role">Fintech & Telecom Operations Leader</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Excellent, ATS-friendly resume with clear impact and strong structure. Quick turnaround, highly responsive and detail-oriented. Highly recommended!"</p><div class="tc-author">Sukhjeet Kaur</div><div class="tc-role">Registered Nurse | Acute Care</div><span class="tc-tag">Resume Writing</span></div>
+        <!-- duplicates -->
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Everything is now clear, professional, and tailored to my goals. Communication was smooth, and the results exceeded my expectations. Highly recommended!"</p><div class="tc-author">Ginika M.</div><div class="tc-role">CBT Therapist | NHS Talking Therapies</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Prasanna's resume and LinkedIn overhaul greatly improved my profile. Professional, timely and easy to reach. Incredibly adaptable to client needs."</p><div class="tc-author">Shehan Soysa</div><div class="tc-role">GIS Professional | Field Technician</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Created different resume versions giving me flexibility with applications, plus helped me optimize my LinkedIn account to perfection. Outstanding service!"</p><div class="tc-author">Fergal Crehan</div><div class="tc-role">Senior Data Protection & Privacy Leader</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"My LinkedIn profile was transformed into a compelling, polished representation of my personal brand. I now feel more confident pursuing new opportunities."</p><div class="tc-author">Otiato Robert</div><div class="tc-role">Fintech & Telecom Operations Leader</div><span class="tc-tag">Resume Writing</span></div>
+        <div class="tc"><div class="tc-stars">★★★★★</div><p class="tc-text">"Excellent, ATS-friendly resume with clear impact and strong structure. Quick turnaround, highly responsive and detail-oriented. Highly recommended!"</p><div class="tc-author">Sukhjeet Kaur</div><div class="tc-role">Registered Nurse | Acute Care</div><span class="tc-tag">Resume Writing</span></div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="cta-section" id="contact">
+  <div class="cta-inner">
+    <div class="section-label" style="justify-content:center">Ready to Transform Your Career?</div>
+    <h2 class="section-title">Let's Build the Profile<br>That Gets You <em>Hired</em></h2>
+    <p class="cta-desc">Whether you're just starting out or leading a team of hundreds — your next opportunity is one great document away. Join 5,000+ professionals who've already made the move.</p>
+    <div class="cta-buttons">
+      <a href="https://www.linkedin.com/in/prasanna-hra/" target="_blank" class="btn-teal">Connect on LinkedIn</a>
+      <a href="mailto:prasanna@hrasolutions.com" class="btn-ghost">Send a Message</a>
+    </div>
+    <div class="cta-contact">
+      <div class="contact-item"><span class="ci">🔗</span><a href="https://www.linkedin.com/in/prasanna-hra/" target="_blank">linkedin.com/in/prasanna-hra</a></div>
+      <div class="contact-item"><span class="ci">📍</span> UK · Remote Worldwide</div>
+      <div class="contact-item"><span class="ci">⏱</span> Response within 24 hours</div>
+    </div>
+  </div>
+</section>
+
+<!-- FOOTER -->
+<footer>
+  <div class="footer-name">Prasanna</div>
+  <div class="footer-links">
+    <a href="#about">About</a>
+    <a href="#services">Services</a>
+    <a href="#reviews">Reviews</a>
+    <a href="https://www.linkedin.com/in/prasanna-hra/" target="_blank">LinkedIn</a>
+  </div>
+  <div class="footer-copy">© 2026 · All rights reserved</div>
+</footer>
+
+<script>
+// Nav scroll
+window.addEventListener('scroll',()=>{
+  document.getElementById('nav').classList.toggle('scrolled',window.scrollY>40)
+})
+
+// Hamburger
+function toggleNav(){
+  document.getElementById('navLinks').classList.toggle('open')
+}
+
+// Scroll reveal with IntersectionObserver
+const obs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{if(e.isIntersecting)e.target.classList.add('shown')})
+},{threshold:0.1})
+document.querySelectorAll('.reveal').forEach(el=>obs.observe(el))
+
+// Counter animation for result numbers
+function animCounter(el,target,suffix){
+  let cur=0;
+  const inc=target/55;
+  const t=setInterval(()=>{
+    cur=Math.min(cur+inc,target);
+    el.textContent=(Number.isInteger(target)?Math.floor(cur):cur.toFixed(1))+suffix;
+    if(cur>=target){el.textContent=target+suffix;clearInterval(t)}
+  },28)
+}
+const counterObs=new IntersectionObserver(entries=>{
+  entries.forEach(e=>{
+    if(e.isIntersecting&&!e.target.dataset.counted){
+      e.target.dataset.counted='1';
+      const el=e.target;
+      el.classList.add('popped');
+      const txt=el.textContent.trim();
+      if(txt.includes('5K'))animCounter(el,5,'K+');
+      else if(txt.includes('3×'))setTimeout(()=>el.textContent='3×',300);
+      else if(txt.includes('5.0'))animCounter(el,5.0,'★');
+      else if(txt.includes('9'))animCounter(el,9,'+');
+    }
+  })
+},{threshold:.5})
+document.querySelectorAll('.result-num').forEach(el=>counterObs.observe(el))
+
+// Hero particle canvas
+const hero=document.querySelector('.hero');
+const canvas=document.createElement('canvas');
+canvas.style.cssText='position:absolute;inset:0;width:100%;height:100%;pointer-events:none;z-index:0;opacity:.45';
+hero.appendChild(canvas);
+const ctx=canvas.getContext('2d');
+let W,H,pts=[];
+function resize(){
+  W=canvas.width=hero.offsetWidth;
+  H=canvas.height=hero.offsetHeight;
+}
+resize();
+window.addEventListener('resize',resize);
+for(let i=0;i<55;i++){
+  pts.push({
+    x:Math.random()*W,y:Math.random()*H,
+    vx:(Math.random()-.5)*.3,vy:(Math.random()-.5)*.3,
+    r:Math.random()*1.8+.5,
+    a:Math.random()
+  })
+}
+function drawParticles(){
+  ctx.clearRect(0,0,W,H);
+  pts.forEach(p=>{
+    p.x+=p.vx;p.y+=p.vy;
+    if(p.x<0)p.x=W;if(p.x>W)p.x=0;
+    if(p.y<0)p.y=H;if(p.y>H)p.y=0;
+    ctx.beginPath();
+    ctx.arc(p.x,p.y,p.r,0,Math.PI*2);
+    ctx.fillStyle=`rgba(77,135,246,${p.a*.6})`;
+    ctx.fill();
+  });
+  // draw connecting lines
+  for(let i=0;i<pts.length;i++){
+    for(let j=i+1;j<pts.length;j++){
+      const dx=pts[i].x-pts[j].x,dy=pts[i].y-pts[j].y;
+      const dist=Math.sqrt(dx*dx+dy*dy);
+      if(dist<120){
+        ctx.beginPath();
+        ctx.moveTo(pts[i].x,pts[i].y);
+        ctx.lineTo(pts[j].x,pts[j].y);
+        ctx.strokeStyle=`rgba(77,135,246,${(.18*(1-dist/120))})`;
+        ctx.lineWidth=.6;
+        ctx.stroke();
+      }
+    }
+  }
+  requestAnimationFrame(drawParticles);
+}
+drawParticles();
+</script>
+</body>
+</html>
